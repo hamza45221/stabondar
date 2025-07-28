@@ -1,0 +1,1 @@
+import{g as r}from"./index.ODjX2MmM.js";import{S as o}from"./ScrollTrigger.Dc0K9LmA.js";r.registerPlugin(o);class c{constructor(){const t=document.querySelector("body");t.classList.add("at-top"),o.create({trigger:"body",start:"top top",end:"300 top",onLeave:()=>t.classList.remove("at-top"),onEnterBack:()=>t.classList.add("at-top")})}}export{c as default};

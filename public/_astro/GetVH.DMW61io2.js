@@ -1,0 +1,1 @@
+class o{constructor(){let e=window.innerHeight;document.documentElement.style.setProperty("--vh",`${e}`),window.addEventListener("resize",()=>{let t=window.innerHeight;document.documentElement.style.setProperty("--vh",`${t}`)})}}export{o as default};

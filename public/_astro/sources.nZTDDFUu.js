@@ -1,0 +1,1 @@
+const u=s=>{const r=[];return s.forEach((c,a)=>{const t=c.querySelector("img");if(t){const e=t.getAttribute("data-src");t.src||(t.src=e);const o=t.alt;r.push({url:e,name:o,type:"textureLoader"})}}),r};export{u as s};

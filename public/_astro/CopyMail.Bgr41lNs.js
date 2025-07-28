@@ -1,0 +1,1 @@
+class i{constructor(t){this.item=t,this.title=this.item.querySelector(".footer_center-title span"),this.trigger=this.item.querySelector("[link-text-parent]"),this.trigger.addEventListener("click",()=>this.copyMail())}copyMail(){navigator.clipboard.writeText("hey@stabondar.com"),this.title.innerText="copied!",setTimeout(()=>this.title.innerText="copy:",1500)}}export{i as C};

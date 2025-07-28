@@ -1,0 +1,1 @@
+class o{constructor(t){this.nums=t.querySelectorAll(".num_item"),this.init(),this.resize()}init(){this.nums.forEach(t=>{let e=t.querySelector(".num_dot").getBoundingClientRect().top.toFixed(0),i=t.querySelector(".num_text");i.innerHTML=`${e}`})}resize(){window.addEventListener("resize",()=>{this.init()})}}export{o as default};
