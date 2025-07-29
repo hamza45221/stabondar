@@ -23,10 +23,10 @@ class CaseController extends Controller
                         <input class="form-check-input" type="checkbox" value="'.$pg->id.'" />
                     </div>';
             })
-            ->editColumn('image', function ($row) {
+            ->editColumn('hero_image', function ($row) {
                 return '<div class="d-flex flex-wrap align-items-center">
-                    <a href="'.$row->main_image_1.'" class="symbol symbol-50px p-1" target="_blank">
-                        <span class="symbol-label" style="background-image:url('.$row->main_image_1.');"></span>
+                    <a href="'.$row->hero_image.'" class="symbol symbol-50px p-1" target="_blank">
+                        <span class="symbol-label" style="background-image:url('.$row->hero_image.');"></span>
                     </a>
                 </div>';
             })
@@ -42,7 +42,7 @@ class CaseController extends Controller
                         </div>
                     </div>';
             })
-            ->rawColumns(['id', 'actions', 'image'])
+            ->rawColumns(['id', 'actions', 'hero_image'])
             ->make(true);
     }
 
@@ -67,13 +67,11 @@ class CaseController extends Controller
         $case->case_nav_footer              = $request->input('case_nav_footer');
         $case->depo_sequence_banner_content = $request->input('depo_sequence_banner_content');
 
-        // Handle hero_image upload
         if ($request->hasFile('hero_image')) {
             $path = $request->file('hero_image')->store('cases/hero_images', 'public');
             $case->hero_image = 'storage/' . $path;
         }
 
-        // Handle depo_suquence_hero_image upload
         if ($request->hasFile('depo_suquence_hero_image')) {
             $path = $request->file('depo_suquence_hero_image')->store('cases/depo_sequence', 'public');
             $case->depo_suquence_hero_image = 'storage/' . $path;
@@ -258,5 +256,22 @@ class CaseController extends Controller
     public function deleteMultiple(Request $request){
         $departments = Cases::whereIn('id',$request->id)->delete();
         return response(['success'=>true,'message'=>'Selected row deleted successfully...']);
+    }
+
+
+
+    public function show($slug)
+    {
+        $currentProject = Cases::where('slug', $slug)->first();
+
+        if (!$currentProject) {
+            abort(404);
+        }
+
+        $nextProject = Cases::where('id', '>', $currentProject->id)
+            ->orderBy('id', 'asc')
+            ->first();
+
+        return view('frontpages.case', compact('currentProject', 'nextProject'));
     }
 }

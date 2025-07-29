@@ -12,40 +12,43 @@
                                 <div class="hero_item">
                                     <h1 class="_24">
                                         @foreach($main->main_heading_1 as $heading)
-                                            <div class="hero_line">{{ $heading['line'] }}</div>
+                                            @foreach($heading as $lineKey => $lineValue)
+                                                <div class="hero_line">{{ $lineKey }}: {{ $lineValue }}</div>
+                                            @endforeach
                                         @endforeach
                                     </h1>
-                                </div>
-                                <div class="hero_item">
-                                    <h2 class="_24">
-                                        @foreach($main->main_heading_2 as $heading)
-                                            <div class="hero_line">
-                                                @if ($loop->last)
-                                                    <span class="indent"></span>{{ $heading['line'] }}
-                                                @else
-                                                    {{ $heading['line'] }}
-                                                @endif
-                                            </div>
-                                        @endforeach
-                                    </h2>
 
-                                </div>
+
+                                    <div class="hero_item">
+                                        <h2 class="_24">
+                                            @foreach($main->main_heading_2 as $heading)
+                                                @foreach($heading as $lineKey => $lineValue)
+                                                    <div class="hero_line">{{ $lineKey }}: {{ $lineValue }}</div>
+                                                @endforeach
+                                            @endforeach
+                                        </h2>
+
+
+                                    </div>
                             </div>
                         </div> <!-- Second Coll -->
                         <div class="hero_col">
                             <div class="hero_item">
                                 <h2 class="_24">
                                     @foreach($main->main_heading_3 as $heading)
-                                        <div class="hero_line">
-                                            @if ($loop->index == 0 || $loop->index == 2)  <!-- For the first and third lines, we add the indent -->
-                                            {{ $heading['line'] }}<span class="indent"></span>
-                                            @else
-                                                {{ $heading['line'] }}
-                                            @endif
-                                        </div>
+                                        @foreach($heading as $key => $line)
+                                            <div class="hero_line">
+                                                @if ($loop->parent->index == 0 || $loop->parent->index == 2)
+                                                    <span class="indent"></span>{{ $line }}
+                                                @else
+                                                    {{ $line }}
+                                                @endif
+                                            </div>
+                                        @endforeach
                                     @endforeach
-
                                 </h2>
+
+
                             </div>
                         </div> <!-- Third Col -->
                         <div class="hero_col">
@@ -53,38 +56,45 @@
                                 <div class="hero_item">
                                     <div class="_24">
                                         @foreach($main->main_heading_1 as $heading)
-                                            <div class="hero_line">{{ $heading['line'] }}</div>
+                                            @foreach($heading as $key => $line)
+                                                <div class="hero_line">({{ $key }}) {{ $line }}</div>
+                                            @endforeach
                                         @endforeach
                                     </div>
                                 </div>
                                 <div class="hero_item">
                                     <h2 class="_24">
                                         @foreach($main->main_heading_4 as $heading)
-                                            <div class="hero_line">
-                                                @if ($loop->last)  <!-- For the last line -->
-                                                <span class="indent"></span>{{ $heading['line'] }}
-                                                @else
-                                                    {{ $heading['line'] }}
-                                                @endif
-                                            </div>
+                                            @foreach($heading as $key => $line)
+                                                <div class="hero_line">
+                                                    @if ($loop->last)
+                                                        <span class="indent"></span>{{ $line }}
+                                                    @else
+                                                        {{ $line }}
+                                                    @endif
+                                                </div>
+                                            @endforeach
                                         @endforeach
-
                                     </h2>
+
                                 </div>
                             </div>
                         </div>
                         <div class="scroll_down">
                             <div class="_24">
                                 @foreach($main->main_heading_5 as $heading)
-                                    <div class="hero_line">
-                                        @if ($loop->index == 1)
-                                            <span class="indent"></span>{{ $heading['line'] }}
-                                        @else
-                                            {{ $heading['line'] }}
-                                        @endif
-                                    </div>
+                                    @foreach($heading as $key => $line)
+                                        <div class="hero_line">
+                                            @if ($loop->parent->index == 1)
+                                                <span class="indent"></span>{{ $line }}
+                                            @else
+                                                {{ $line }}
+                                            @endif
+                                        </div>
+                                    @endforeach
                                 @endforeach
                             </div>
+
 
                         </div>
                     </div>
@@ -1668,51 +1678,53 @@
     <section class="projects">
         <div class="projects_body">
             <div class="projects_container">
-                <div class="projects_list"><a href="cases%20%281%29/runway" class="projects_img runway is-1"> <img
-                        draggable="false" data-src="/images/runway/main.webp" alt="runway" width="3001" height="2000">
-                </a><a href="cases%20%281%29/depo-studio" class="projects_img depo is-2"> <img draggable="false"
-                                                                                               data-src="/images/depo/main.webp"
-                                                                                               alt="depo" width="2000"
-                                                                                               height="2000"> </a><a
-                        href="cases%20%281%29/dima-kutsenko" class="projects_img dima is-3"> <img draggable="false"
-                                                                                                  data-src="/images/dima/main.webp"
-                                                                                                  alt="dima"
-                                                                                                  width="2000"
-                                                                                                  height="2000"> </a><a
-                        href="cases%20%281%29/orb-space" class="projects_img orb-space is-4"> <img draggable="false"
-                                                                                                   data-src="/images/orb/main.webp"
-                                                                                                   alt="orb-space"
-                                                                                                   width="2000"
-                                                                                                   height="2000"> </a><a
-                        href="cases%20%281%29/terrane-group" class="projects_img terrane is-5"> <img draggable="false"
-                                                                                                     data-src="/images/terrane/main.webp"
-                                                                                                     alt="terrane"
-                                                                                                     width="2000"
-                                                                                                     height="2000"> </a>
-                </div>
-                <div class="projects_list"><a href="cases%20%281%29/runway" class="projects_img runway is-1"> <img
-                        draggable="false" data-src="/images/runway/main.webp" alt="runway" width="3001" height="2000">
-                </a><a href="cases%20%281%29/depo-studio" class="projects_img depo is-2"> <img draggable="false"
-                                                                                               data-src="/images/depo/main.webp"
-                                                                                               alt="depo" width="2000"
-                                                                                               height="2000"> </a><a
-                        href="cases%20%281%29/dima-kutsenko" class="projects_img dima is-3"> <img draggable="false"
-                                                                                                  data-src="/images/dima/main.webp"
-                                                                                                  alt="dima"
-                                                                                                  width="2000"
-                                                                                                  height="2000"> </a><a
-                        href="cases%20%281%29/orb-space" class="projects_img orb-space is-4"> <img draggable="false"
-                                                                                                   data-src="/images/orb/main.webp"
-                                                                                                   alt="orb-space"
-                                                                                                   width="2000"
-                                                                                                   height="2000"> </a><a
-                        href="cases%20%281%29/terrane-group" class="projects_img terrane is-5"> <img draggable="false"
-                                                                                                     data-src="/images/terrane/main.webp"
-                                                                                                     alt="terrane"
-                                                                                                     width="2000"
-                                                                                                     height="2000"> </a>
-                </div>
+                @foreach ($case as $index => $blog)
+                    <div class="projects_list">
+                        <!-- Use the same hero_image for each anchor and image tag -->
+                        <a href="{{ url('cases/' . strtolower(str_replace(' ', '-', $blog->case_nav_name))) }}" class="projects_img {{ strtolower(str_replace(' ', '-', $blog->case_nav_name)) }} is-{{ $index + 1 }}">
+                            <img
+                                draggable="false"
+                                data-src="{{ asset($blog->hero_image) }}"
+                                alt="{{ $blog->depo_studio }}"
+                                width="3001"
+                                height="2000">
+                        </a>
+                        <a href="{{ url('cases/' . strtolower(str_replace(' ', '-', $blog->depo_studio))) }}" class="projects_img {{ strtolower(str_replace(' ', '-', $blog->depo_studio)) }} is-{{ $index + 2 }}">
+                            <img
+                                draggable="false"
+                                data-src="{{ asset($blog->hero_image) }}"
+                                alt="{{ $blog->depo_studio }}"
+                                width="2000"
+                                height="2000">
+                        </a>
+                        <a href="{{ url('cases/' . strtolower(str_replace(' ', '-', $blog->studio_heading_1))) }}" class="projects_img {{ strtolower(str_replace(' ', '-', $blog->studio_heading_1)) }} is-{{ $index + 3 }}">
+                            <img
+                                draggable="false"
+                                data-src="{{ asset($blog->hero_image) }}"
+                                alt="{{ $blog->studio_heading_1 }}"
+                                width="2000"
+                                height="2000">
+                        </a>
+                        <a href="{{ url('cases/' . strtolower(str_replace(' ', '-', $blog->fwa_heading_1))) }}" class="projects_img {{ strtolower(str_replace(' ', '-', $blog->fwa_heading_1)) }} is-{{ $index + 4 }}">
+                            <img
+                                draggable="false"
+                                data-src="{{ asset($blog->hero_image) }}"
+                                alt="{{ $blog->fwa_heading_1 }}"
+                                width="2000"
+                                height="2000">
+                        </a>
+                        <a href="{{ url('cases/' . strtolower(str_replace(' ', '-', $blog->studio_heading_2))) }}" class="projects_img {{ strtolower(str_replace(' ', '-', $blog->studio_heading_2)) }} is-{{ $index + 5 }}">
+                            <img
+                                draggable="false"
+                                data-src="{{ asset($blog->hero_image) }}"
+                                alt="{{ $blog->studio_heading_2 }}"
+                                width="2000"
+                                height="2000">
+                        </a>
+                    </div>
+                @endforeach
             </div>
+
         </div>
     </section>
 

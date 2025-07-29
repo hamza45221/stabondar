@@ -24,7 +24,7 @@ class CreateMainheroesTable extends Migration
             $table->longText('main_heading_5')->nullable();
             $table->string('hero_video_wrapper')->nullable();
             $table->string('hero_video_unmute')->nullable();
-            $table->text('descrition')->nullable();
+            $table->text('description')->nullable();
             $table->string('num_text')->nullable();
             $table->longText('cube_char_1')->nullable();
             $table->longText('cube_char_2')->nullable();

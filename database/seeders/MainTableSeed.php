@@ -16,62 +16,61 @@ class MainTableSeed extends Seeder
     public function run()
     {
         $main = new Mainhero();
-        $main->navbar =
+        $main->navbar = [
             [
-                [
-                    'url'=>'',
-                    'name'=>'Home',
-                ],
-                [
-                    'url'=>'',
-                    'name'=>'Cases',
-                ],
-                [
-                    'url'=>'',
-                    'name'=>'Contacts',
-                ],
-                [
-                    'url'=>'',
-                    'name'=>'Let`s Talk',
-                ],
-            ];
+                'url' => '',  // You can replace '' with actual route names
+                'name' => 'Home',
+            ],
+            [
+                'url' => '',  // Replace '' with actual route names
+                'name' => 'Cases',
+            ],
+            [
+                'url' => '',  // Replace '' with actual route names
+                'name' => 'Contacts',
+            ],
+            [
+                'url' => '',  // Replace '' with actual route names
+                'name' => 'Let`s Talk',
+            ],
+        ];
         $main->loader_body = [
-            'line1'=>'Creative Developer<',
+            'line1'=>'Creative Developer',
             'line2'=>'Developer',
             'line3'=>'Creative',
         ];
         $main->main_heading_1 = [
-            ['line' => 'Creative Developer'],
-            ['line' => 'Creative Developer'],
-            ['line' => 'Creative Developer'],
+            ['line1' => 'Creative Developer'],
+            ['line2' => 'Creative Developer'],
+            ['line3' => 'Creative Developer'],
         ];
 
         $main->main_heading_2 = [
-            ['line' => 'Art Director'],
-            ['line' => 'Awwwards Jury Member'],
-            ['line' => 'Teammate at Depo'],
+            ['line1' => 'Art Director'],
+            ['line2' => 'Awwwards Jury Member'],
+            ['line3' => 'Teammate at Depo'],
         ];
 
         $main->main_heading_3 = [
-            ['line' => 'Available'],
-            ['line' => 'for'],
-            ['line' => 'Freelance'],
-            ['line' => 'Projects'],
+            ['line1' => 'Available'],
+            ['line2' => 'for'],
+            ['line3' => 'Freelance'],
+            ['line4' => 'Projects'],
         ];
 
         $main->main_heading_4 = [
-            ['line' => 'Nominee'],
-            ['line' => 'Designer of the Year ‘23'],
-            ['line' => 'by CSSDA'],
+            ['line1' => 'Nominee'],
+            ['line2' => 'Designer of the Year ‘23'],
+            ['line3' => 'by CSSDA'],
         ];
 
         $main->main_heading_5 = [
-            ['line' => 'Scroll'],
-            ['line' => 'Down'],
+            ['line1' => 'Scroll'],
+            ['line2' => 'Down'],
         ];
         $main->hero_video_wrapper= 'st-b-showreel.mp4';
         $main->hero_video_unmute= 'unmute';
-        $main->descrition = '
+        $main->description = '
          <p class="_24">
                             I’m Stas Bondar, a <span>Creative Developer</span> with a passion for bringing ideas to life
                             through design and technology. My journey as a <span>Creative Developer</span> started after
@@ -141,12 +140,7 @@ class MainTableSeed extends Seeder
 
         $main->team_description = 'Get peace of mind knowing that our ad platform comes with top-tier customer care and expert tech support ensuring a smooth and hassle-free experience with our ad platform.';
 
-        $main->projects =[
-            'image1'=>'/images/part-of/logo-1.jpg',
-            'image2'=>'/images/part-of/logo-2.jpg',
-            'image3'=>'/images/part-of/logo-3.jpg',
-            'image4'=>'/images/part-of/logo-4.jpg',
-        ];
+
 
         $main->drop_me_heading1 = 'Drop me';
         $main->drop_me_heading2 = 'a line:';

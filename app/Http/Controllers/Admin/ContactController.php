@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Mail\ContactMail;
+use App\Models\Cases;
 use App\Models\Contact;
 use App\Models\Mainhero;
 use Illuminate\Http\Request;
@@ -44,6 +45,11 @@ class ContactController extends Controller
         $contact->save();
         return back()->with('success', 'Contact saved successfully!');
     }
+
+
+
+
+
 
 
 }

@@ -19,19 +19,7 @@ class Cases extends Model
     protected $guarded=[];
 
     protected $casts = [
-        'dcb_protect_cards'=>'array',
-        'slogan_video_img'=>'array',
-        'career_billing_heading'=>'array',
-        'career_offer_list'=>'array',
-        'masive_fraud_list'=>'array',
-        'mid_block_video_img_src_path'=>'array',
-        'mobile_operater_list'=>'array',
-        'merchants_list'=>'array',
-        'less_fruad_card'=>'array',
-        'fraud_detected_type_faq'=>'array',
-        'integration_payment_list'=>'array',
-        'gdpr_complaint_list'=>'array',
-        'moniter_analyze_list'=>'array',
+
     ];
 
 
@@ -50,12 +38,12 @@ class Cases extends Model
     public function getMainImage1Attribute()
     {
 
-        if ($this->image) {
-            if (Storage::disk('public')->exists($this->image)) {
-                return Storage::url($this->image);
+        if ($this->hero_image) {
+            if (Storage::disk('public')->exists($this->hero_image)) {
+                return Storage::url($this->hero_image);
             }
         }
-        return asset($this->image);
+        return asset($this->hero_image);
 
     }
 }

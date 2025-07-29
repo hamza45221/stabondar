@@ -13,6 +13,7 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\FrontPageController::class, 'index'])->name('index');
 Route::get('/contact', [App\Http\Controllers\FrontPageController::class, 'contact'])->name('contact');
 Route::get('/send-message', [\App\Http\Controllers\Admin\ContactController::class, 'contactMessage'])->name('contact.message');
+Route::get('cases/{slug}', [\App\Http\Controllers\Admin\CaseController::class, 'show'])->name('projects.show');
 
 
 Route::group(['prefix'=>'admin'], function () {

@@ -10,10 +10,10 @@
                 <div class="case-hero_item sotd">
                     <div class="case-hero_item-lines">
                         <div class="case-hero_item-line">
-                            <div class="_24">Site of the Day</div>
+                            <div class="_24">{{ $currentProject->site_award_heading_1 }}</div>
                         </div>
                         <div class="case-hero_item-line">
-                            <div class="_24">by Awwwards</div>
+                            <div class="_24">{{ $currentProject->site_award_heading_2 }}</div>
                         </div>
                     </div>
                 </div>
@@ -21,23 +21,23 @@
                     <div class="case-hero_item wotd">
                         <div class="case-hero_item-lines">
                             <div class="case-hero_item-line">
-                                <div class="_24">Website of the Day</div>
+                                <div class="_24">{{ $currentProject->web_day_heading_1 }}</div>
                             </div>
                             <div class="case-hero_item-line">
-                                <div class="_24">by CSS</div>
+                                <div class="_24">{{ $currentProject->web_day_heading_2 }}</div>
                             </div>
                             <div class="case-hero_item-line">
-                                <div class="_24">Design Awards</div>
+                                <div class="_24">{{ $currentProject->web_day_heading_3 }}</div>
                             </div>
                         </div>
                     </div>
                     <div class="case-hero_item fwa">
                         <div class="case-hero_item-lines">
                             <div class="case-hero_item-line">
-                                <div class="_24">FWA</div>
+                                <div class="_24">{{ $currentProject->fwa_heading_1 }}</div>
                             </div>
                             <div class="case-hero_item-line">
-                                <div class="_24">of the day</div>
+                                <div class="_24">{{ $currentProject->fwa_heading_2 }}</div>
                             </div>
                         </div>
                     </div>
@@ -45,10 +45,10 @@
                 <div class="case-hero_item descr">
                     <div class="case-hero_item-lines">
                         <div class="case-hero_item-line">
-                            <div class="_24">Digital Studio</div>
+                            <div class="_24">{{{ $currentProject->studio_heading_1 }}}</div>
                         </div>
                         <div class="case-hero_item-line">
-                            <div class="_24">website</div>
+                            <div class="_24">{{ $currentProject->studio_heading_2 }}</div>
                         </div>
                     </div>
                 </div>
@@ -57,19 +57,19 @@
                 <div class="case-hero_item descr">
                     <div class="case-hero_item-lines">
                         <div class="case-hero_item-line">
-                            <div class="_24">Digital Studio</div>
+                            <div class="_24">{{ $currentProject->depo_studio }}</div>
                         </div>
                         <div class="case-hero_item-line">
-                            <div class="_24">website</div>
+                            <div class="_24">{{ $currentProject->studio_heading_2 }}</div>
                         </div>
                     </div>
                 </div>
-                <h1 class="_190">Depo Studio</h1>
+                <h1 class="_190">{{ $currentProject->depo_studio }}</h1>
             </div>
         </div>
         <div class="case-hero_right">
             <div class="case-hero_image" data-width="2000" data-height="2000"> <img
-                    data-src="/images/depo/main.webp" alt="Depo Studio"> </div>
+                    data-src="{{ $currentProject->image1 }}" alt="Depo Studio"> </div>
         </div>
     </header>
 
@@ -79,8 +79,8 @@
         <section>
             <div class="case_container">
                 <div class="case_nav">
-                    <div class="case_nav-name"> <span class="_24">Depo Studio</span> </div>
-                    <div class="case_nav-section"> <span class="_24">Home page</span> </div>
+                    <div class="case_nav-name"> <span class="_24">{{ $currentProject->case_nav_name }}</span> </div>
+                    <div class="case_nav-section"> <span class="_24">{{ $currentProject->case_nav_section }}</span> </div>
                     <div class="case_nav-link">
                         <a href="https://www.depo.studio/" target="_blank"
                                                    class="footer_link">
@@ -92,97 +92,95 @@
                                         fill="currentColor"></path>
                                 </svg>
                             </div>
-                            <div class="footer_text _24" link-text-parent> <span link-text-target>Visit Live Site</span> </div>
+                            <div class="footer_text _24" link-text-parent> <span link-text-target>{{ $currentProject->case_nav_footer }}</span> </div>
                         </a>
                     </div>
                 </div>
                 <div class="case_body">
                     <div class="case_body-hero" data-width="2340" data-height="1316" current-section="Loader">
                         <img
-                            data-src="/_astro/Item 01.BBYPfXL5.png" alt="undefined hero"> </div>
+                            data-src="{{ asset($currentProject->depo_suquence_hero_image) }}" alt="undefined hero"> </div>
                     <div class="depo-suquence" case-module="depo Sequence" current-section="Home Page Sequence">
                         <div class="depo-suquence_sticky">
                             <div class="depo-sequence_banner">
                                 <div class="_96">
-                                    Our mission is creating world-class websites where beauty meets sales prowess.
-                                    Why not to have both?
+                                   {{ $currentProject->depo_sequence_banner_content }}
                                 </div>
                             </div> <canvas class="depo-suquence_canvas"></canvas>
                         </div>
                     </div>
                     <div class="case-grid" current-section="Home Page / Hero Section">
                         <div class="case_item depo is-1" data-scroll-from-to="-10" data-width="1560"
-                             data-height="878"> <img data-src="/_astro/Item 02.CuVfKpgV.png" alt="depo-0"
+                             data-height="878"> <img data-src="{{ asset($currentProject->home_sec_images1) }}" alt="depo-0"
                                                      width="1560" height="878"> </div>
                         <div class="case_item depo is-2" data-scroll-from-to="20" data-width="390"
-                             data-height="845"> <img data-src="/_astro/Item 03.BBEM4OUP.png" alt="depo-1" width="390"
+                             data-height="845"> <img data-src="{{ asset($currentProject->home_sec_images2) }}" alt="depo-1" width="390"
                                                      height="845"> </div>
                     </div>
                     <div class="case-grid" current-section="Homepage">
                         <div class="case_item depo is-3" data-scroll-from-to="-10" data-width="975"
-                             data-height="549"> <img data-src="/_astro/Item 04.CJIt6T5S.webp" alt="depo-2"
+                             data-height="549"> <img data-src="{{ asset($currentProject->home_page_images1) }}" alt="depo-2"
                                                      width="975" height="549"> </div>
                         <div class="case_item depo is-4" data-scroll-from-to="20" data-width="975"
-                             data-height="606"> <img data-src="/_astro/Item 05.C38x99a7.png" alt="depo-3" width="975"
+                             data-height="606"> <img data-src="{{ asset($currentProject->home_page_images2) }}" alt="depo-3" width="975"
                                                      height="606"> </div>
                         <div class="case_item depo is-5" data-scroll-from-to="-10">
-                            <video data-height="1080" data-width="1920" data-src="https://customer-bxnymfcijxht3x73.cloudflarestream.com/1ad8c8d74470ac938027c8cc3bad6bbe/manifest/video.m3u8"
+                            <video data-height="1080" data-width="1920" data-src="{{ asset($currentProject->home_page_video) }}"
                               loop="true" playsinline="true" muted="true"></video>
                         </div>
                     </div>
                     <div class="case-grid" current-section="Cases">
                         <div class="case_item depo is-6" data-scroll-from-to="-10" data-width="2145"
-                             data-height="1277"> <img data-src="/_astro/Item 07.CAPq2iIi.png" alt="depo-5"
+                             data-height="1277"> <img data-src="{{ asset($currentProject->case_image1) }}" alt="depo-5"
                                                       width="2145" height="1277"> </div>
                         <div class="case_item depo is-7" data-scroll-from-to="20" data-width="390"
-                             data-height="530"> <img data-src="/_astro/Item 08.CoDuYzdB.png" alt="depo-6" width="390"
+                             data-height="530"> <img data-src="{{ asset($currentProject->case_image2) }}" alt="depo-6" width="390"
                                                      height="530"> </div>
                         <div class="case_item depo is-8" data-scroll-from-to="5" data-width="390"
-                             data-height="1230"> <img data-src="/_astro/Item 09.Bbu6EhMK.webp" alt="depo-7"
+                             data-height="1230"> <img data-src="{{ asset($currentProject->case_image3) }}" alt="depo-7"
                                                       width="390" height="1230">
                         </div>
                         <div class="case_item depo is-9" data-scroll-from-to="5" data-width="390" data-height="845">
-                            <img data-src="/_astro/Item 10.BN4W3hnH.png" alt="depo-8" width="390" height="845">
+                            <img data-src="{{ asset($currentProject->case_image4) }}" alt="depo-8" width="390" height="845">
                         </div>
                         <div class="case_item depo is-10" data-scroll-from-to="5" data-width="779"
-                             data-height="1038"> <img data-src="/_astro/Item 11.DvJ4TERn.webp" alt="depo-9"
+                             data-height="1038"> <img data-src="{{ asset($currentProject->case_image5) }}" alt="depo-9"
                                                       width="779" height="1038"> </div>
                     </div>
                     <div class="case-grid" current-section="About Page">
                         <div class="case_item depo full" data-scroll-from-to="-10">
-                            <video data-height="1080" data-width="1920"  data-src="https://customer-bxnymfcijxht3x73.cloudflarestream.com/4e51007a7d9664dc98d31566198903d1/manifest/video.m3u8"
+                            <video data-height="1080" data-width="1920"  data-src="{{ asset($currentProject->case_video) }}"
                                                                                            loop="true" playsinline="true" muted="true"></video> </div>
                     </div>
 
                     <div class="case-grid">
                         <div class="case_item depo is-11" data-scroll-from-to="-10" data-width="1755"
-                             data-height="1397"> <img data-src="/_astro/Item 13.FszIwH2e.webp" alt="depo-11"
+                             data-height="1397"> <img data-src="{{ asset($currentProject->case_image6) }}" alt="depo-11"
                                                       width="1755" height="1397"> </div>
                         <div class="case_item depo is-12" data-scroll-from-to="20" data-width="390"
-                             data-height="1271"> <img data-src="/_astro/Item 12.BucVJLVa.png" alt="depo-12"
+                             data-height="1271"> <img data-src="{{ asset($currentProject->case_image7) }}" alt="depo-12"
                                                       width="390" height="1271"> </div>
                         <div class="case_item depo is-13" data-scroll-from-to="5" data-width="387"
-                             data-height="360"> <img data-src="/_astro/Item 14.Cv7x6EHL.png" alt="depo-13"
+                             data-height="360"> <img data-src="{{ asset($currentProject->case_image8) }}" alt="depo-13"
                                                      width="387" height="360"> </div>
                     </div>
                     <div class="case-grid">
                         <div class="case_item depo is-14" data-scroll-from-to="-10">
                             <video data-height="1080"  data-width="1920"
-                                 data-src="https://customer-bxnymfcijxht3x73.cloudflarestream.com/10f26782d438342eaabddb8279952bb5/manifest/video.m3u8"
-                                                                                            loop="true" playsinline="true" muted="true"></video> </div>
+                                 data-src="{{ asset($currentProject->case_vide2) }}" loop="true" playsinline="true" muted="true"></video> </div>
                     </div>
                     <div class="case-grid" current-section="Contact us">
                         <div class="case_item depo is-15" data-scroll-from-to="-10" data-width="1365"
-                             data-height="768"> <img data-src="/_astro/Item 15.CGBNrj-6.png" alt="depo-15"
+                             data-height="768"> <img data-src="{{ asset($currentProject->contact_img1) }}" alt="depo-15"
                                                      width="1365" height="768"> </div>
                         <div class="case_item depo is-16" data-scroll-from-to="20" data-width="390"
-                             data-height="1236"> <img data-src="/_astro/Item 16.30FS1xAs.png" alt="depo-16"
+                             data-height="1236"> <img data-src="{{ asset($currentProject->contact_img2) }}" alt="depo-16"
                                                       width="390" height="1236"> </div>
                     </div>
                     <div class="case-grid" current-section="404">
                         <div class="case_item depo full" data-scroll-from-to="-10"> <video data-height="1080"
                                                                                            data-width="1920"
-                                                                                           data-src="https://customer-bxnymfcijxht3x73.cloudflarestream.com/de0f0698d7459a526df46ada859b456f/manifest/video.m3u8"
+                                                                                           data-src="{{ asset($currentProject->contact_img3) }}"
                                                                                            loop="true" playsinline="true" muted="true"></video> </div>
                     </div>
                 </div>
@@ -190,12 +188,12 @@
         </section>
         <footer class="case-footer" data-next="dima">
             <div class="case-footer_body">
-                <div class="case-footer_cover"> <img data-src="/images/dima/footer.webp"> </div>
+                <div class="case-footer_cover"> <img data-src="{{ asset($currentProject->footer_image) }}"> </div>
                 <div class="case-footer_banner"> <a href="/cases/dima-kutsenko" class="case-footer_fixed">
-                        <div class="case-footer_thumb"> <img data-src="/images/dima/main.webp"
+                        <div class="case-footer_thumb"> <img data-src="{{ asset($currentProject->footer_thumb) }}"
                                                              class="case_transition-img" alt="Dima Kutsenko"> </div>
                         <div class="case-footer_cta">
-                            <div class="case-footer_cta-text"> <span class="_190">Next Project</span> </div>
+                            <div class="case-footer_cta-text"> <span class="_190">{{ $currentProject->footer_text }}</span> </div>
                             <div class="case-footer_cta-arrow-parent">
                                 <div class="case-footer_cta-arrow"> <svg width="100%" height="100%"
                                                                          viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -207,10 +205,10 @@
                         </div>
                     </a> </div>
             </div> <a href="/cases/dima-kutsenko" class="case-footer_fixed">
-                <div class="case-footer_thumb"> <img data-src="/images/dima/main.webp" class="case_transition-img"
+                <div class="case-footer_thumb"> <img data-src="{{ $currentProject->footer_fixed_img }}" class="case_transition-img"
                                                      alt="Dima Kutsenko"> </div>
                 <div class="case-footer_cta">
-                    <div class="case-footer_cta-text"> <span class="_190">Next Project</span> </div>
+                    <div class="case-footer_cta-text"> <span class="_190">{{ $currentProject->footer_fixed_text }}</span> </div>
                     <div class="case-footer_cta-arrow-parent">
                         <div class="case-footer_cta-arrow"> <svg width="100%" height="100%" viewBox="0 0 11 11"
                                                                  fill="none" xmlns="http://www.w3.org/2000/svg">

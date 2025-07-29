@@ -39,7 +39,7 @@ class HeroMainController extends Controller
 
         $hero->hero_video_wrapper = $request->hero_video_wrapper;
         $hero->hero_video_unmute = $request->hero_video_unmute;
-        $hero->descrition = $request->descrition;
+        $hero->description = $request->description;
         $hero->num_text = $request->num_text;
         $hero->team_description = $request->team_description;
         $hero->drop_me_heading1 = $request->drop_me_heading1;
@@ -64,7 +64,6 @@ class HeroMainController extends Controller
         $hero->main_heading_5  = $request->main_heading_5  ?? [];
         $hero->cube_char_1 = $request->cube_char_1 ?? [];
         $hero->cube_char_2 = $request->cube_char_2 ?? [];
-        $hero->projects = $request->projects ?? [];
         $hero->drop_me_links = $request->drop_me_links ?? [];
         $hero->copy_links = $request->copy_links ?? [];
         $hero->social_media_links = $request->social_media_links ?? [];
