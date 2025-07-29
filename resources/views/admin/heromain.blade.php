@@ -1,5 +1,9 @@
 @extends('layouts.mainadmin')
-
+<style>
+    .form-label {
+        margin-top:20px !important;
+    }
+</style>
 @section('content')
     <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
         <div class="d-flex flex-column flex-column-fluid">
@@ -65,9 +69,9 @@
                                             </div>
                                         @endif
                                     </div>
-                                    <button type="button" data-repeater-create class="btn btn-primary mt-2 mb-5">
-                                        Add Navbar Link
-                                    </button>
+{{--                                    <button type="button" data-repeater-create class="btn btn-primary mt-2 mb-5">--}}
+{{--                                        Add Navbar Link--}}
+{{--                                    </button>--}}
                                 </div>
 
 
@@ -548,11 +552,11 @@
                                                         <input type="text" name="cube_char_2[{{ $index }}][line4]" class="form-control"
                                                                value="{{ $item['line4'] ?? '' }}" placeholder="e.g., 23">
                                                     </div>
-                                                    <div>
-                                                        <button type="button" data-repeater-delete class="btn btn-sm btn-light-danger">
-                                                            Delete
-                                                        </button>
-                                                    </div>
+{{--                                                    <div>--}}
+{{--                                                        <button type="button" data-repeater-delete class="btn btn-sm btn-light-danger">--}}
+{{--                                                            Delete--}}
+{{--                                                        </button>--}}
+{{--                                                    </div>--}}
                                                 </div>
                                             @endforeach
                                         @else
@@ -573,19 +577,19 @@
                                                     <label class="form-label">Line 4</label>
                                                     <input type="text" name="cube_char_2[][line4]" class="form-control" placeholder="e.g., 23">
                                                 </div>
-                                                <div>
-                                                    <button type="button" data-repeater-delete class="btn btn-sm btn-light-danger">
-                                                        Delete
-                                                    </button>
-                                                </div>
+{{--                                                <div>--}}
+{{--                                                    <button type="button" data-repeater-delete class="btn btn-sm btn-light-danger">--}}
+{{--                                                        Delete--}}
+{{--                                                    </button>--}}
+{{--                                                </div>--}}
                                             </div>
                                         @endif
                                     </div>
 
                                     <!-- Add New Cube Char Button -->
-                                    <button type="button" data-repeater-create class="btn btn-light-primary mt-2">
-                                        <i class="la la-plus"></i> Add Cube Char
-                                    </button>
+{{--                                    <button type="button" data-repeater-create class="btn btn-light-primary mt-2">--}}
+{{--                                        <i class="la la-plus"></i> Add Cube Char--}}
+{{--                                    </button>--}}
                                 </div>
 
 
@@ -652,7 +656,7 @@
 
                                 {{-- Copy Links --}}
                                 <div class="form-group mt-5">
-                                    <label class="fs-5 fw-bold mb-3">Copy Links</label>
+                                    <label class="form-label">Copy Links</label>
                                     <div class="copy_links_repeater" data-repeater-list="copy_links">
                                         @if(!empty($heromain->copy_links) && is_array($heromain->copy_links))
                                             @foreach($heromain->copy_links as $index => $c)
@@ -706,7 +710,7 @@
                                 <div class="row">
                                     {{-- Social Media Links --}}
                                     <div class="col-md-6 form-group mt-5">
-                                        <label class="fs-5 fw-bold mb-3">Social Media Links</label>
+                                        <label class="form-label">Social Media Links</label>
                                         <div class="social_media_links_repeater" data-repeater-list="social_media_links">
                                             @if(!empty($heromain->social_media_links) && is_array($heromain->social_media_links))
                                                 @foreach($heromain->social_media_links as $index => $s)
@@ -718,9 +722,9 @@
                                                         <input type="text" name="social_media_links[{{ $index }}][url]" class="form-control w-75"
                                                                value="{{ $s['url'] ?? '' }}" placeholder="URL">
                                                         <!-- Delete Button -->
-                                                        <a href="javascript:;" data-repeater-delete class="btn btn-sm btn-light-danger">
-                                                            <i class="la la-trash-o fs-2"></i>
-                                                        </a>
+{{--                                                        <a href="javascript:;" data-repeater-delete class="btn btn-sm btn-light-danger">--}}
+{{--                                                            <i class="la la-trash-o fs-2"></i>--}}
+{{--                                                        </a>--}}
                                                     </div>
                                                 @endforeach
                                             @else
@@ -729,22 +733,22 @@
                                                     <input type="text" name="social_media_links[][name]" class="form-control w-25" placeholder="Platform Name">
                                                     <input type="text" name="social_media_links[][url]" class="form-control w-75" placeholder="URL">
                                                     <!-- Delete Button -->
-                                                    <a href="javascript:;" data-repeater-delete class="btn btn-sm btn-light-danger">
-                                                        <i class="la la-trash-o fs-2"></i>
-                                                    </a>
+{{--                                                    <a href="javascript:;" data-repeater-delete class="btn btn-sm btn-light-danger">--}}
+{{--                                                        <i class="la la-trash-o fs-2"></i>--}}
+{{--                                                    </a>--}}
                                                 </div>
                                             @endif
                                         </div>
 
                                         <!-- Add New Link Button -->
-                                        <a href="javascript:;" data-repeater-create class="btn btn-light-primary mt-2">
-                                            <i class="la la-plus"></i> Add Social Media Link
-                                        </a>
+{{--                                        <a href="javascript:;" data-repeater-create class="btn btn-light-primary mt-2">--}}
+{{--                                            <i class="la la-plus"></i> Add Social Media Link--}}
+{{--                                        </a>--}}
                                     </div>
 
                                     {{-- Stas Bondar --}}
                                     <div class="col-md-6 form-group mt-3">
-                                        <label for="stas_bondar" class="fs-5 fw-bold mb-2">Stas Bondar</label>
+                                        <label for="stas_bondar" class="form-label">Stas Bondar</label>
                                         <input
                                             type="text"
                                             name="stas_bondar"
@@ -856,7 +860,7 @@
 
                                <div class="row">
                                    <div class="col-md-12  form-group mt-3">
-                                       <label for="css_design_title" class="fs-5 fw-bold mb-2">CSS Design Awards Title</label>
+                                       <label for="css_design_title" class="form-label">CSS Design Awards Title</label>
                                        <input
                                            type="text"
                                            name="css_design_title"
@@ -866,12 +870,58 @@
                                            placeholder="css design awards">
                                    </div>
 
+                                   <div id="css_design_list_repeater">
+                                       <div data-repeater-list="css_design_list">
+                                           @if (!empty($heromain->css_design_list) && is_array($heromain->css_design_list))
+                                               @foreach ($heromain->css_design_list as $item)
+                                                   <div data-repeater-item class="form-group row align-items-center mb-4">
+                                                       <div class="col-md-5">
+                                                           <label class="form-label">Line 1</label>
+                                                           <input type="text" name="line1" value="{{ $item['line1'] }}" class="form-control" placeholder="Enter Line 1" />
+                                                       </div>
+                                                       <div class="col-md-5">
+                                                           <label class="form-label">Line 2</label>
+                                                           <input type="text" name="line2" value="{{ $item['line2'] }}" class="form-control" placeholder="Enter Line 2" />
+                                                       </div>
+{{--                                                       <div class="col-md-2 mt-8">--}}
+{{--                                                           <a href="javascript:;" data-repeater-delete class="btn btn-sm btn-light-danger">--}}
+{{--                                                               <i class="la la-trash-o"></i> Delete--}}
+{{--                                                           </a>--}}
+{{--                                                       </div>--}}
+                                                   </div>
+                                               @endforeach
+                                           @else
+                                               <div data-repeater-item class="form-group row align-items-center mb-4">
+                                                   <div class="col-md-5">
+                                                       <label class="form-label">Line 1</label>
+                                                       <input type="text" name="line1" class="form-control" placeholder="Enter Line 1" />
+                                                   </div>
+                                                   <div class="col-md-5">
+                                                       <label class="form-label">Line 2</label>
+                                                       <input type="text" name="line2" class="form-control" placeholder="Enter Line 2" />
+                                                   </div>
+{{--                                                   <div class="col-md-2 mt-8">--}}
+{{--                                                       <a href="javascript:;" data-repeater-delete class="btn btn-sm btn-light-danger">--}}
+{{--                                                           <i class="la la-trash-o"></i> Delete--}}
+{{--                                                       </a>--}}
+{{--                                                   </div>--}}
+                                               </div>
+                                           @endif
+                                       </div>
+
+{{--                                       <div class="form-group mt-3">--}}
+{{--                                           <a href="javascript:;" data-repeater-create class="btn btn-sm btn-light-primary">--}}
+{{--                                               <i class="la la-plus"></i> Add Design Entry--}}
+{{--                                           </a>--}}
+{{--                                       </div>--}}
+                                   </div>
+
 
 
 
                                    {{-- The FWA Title --}}
                                    <div class=" col-md-12 form-group mt-3 mb-4">
-                                       <label for="the_fwa_title" class="fs-5 fw-bold mb-2">The FWA Title</label>
+                                       <label for="the_fwa_title" class="form-labe">The FWA Title</label>
                                        <input
                                            type="text"
                                            name="the_fwa_title"
@@ -880,11 +930,40 @@
                                            value="{{ old('the_fwa_title', $heromain->the_fwa_title ?? '') }}"
                                            placeholder="the fwa">
                                    </div>
+
+
+                                   <div id="fwa_list_repeater">
+                                       <div data-repeater-list="the_fwa_list">
+                                           @foreach($heromain->the_fwa_list as $item)
+                                               <div data-repeater-item class="form-group row">
+                                                   <div class="col-md-5">
+                                                       <label class="form-label">Line 1</label>
+                                                       <input type="text" name="line1" class="form-control" value="{{ $item['line1'] }}">
+                                                   </div>
+                                                   <div class="col-md-5">
+                                                       <label class="form-label">Line 2</label>
+                                                       <input type="text" name="line2" class="form-control" value="{{ $item['line2'] }}">
+                                                   </div>
+{{--                                                   <div class="col-md-2 d-flex align-items-end">--}}
+{{--                                                       <a href="javascript:;" data-repeater-delete class="btn btn-sm btn-danger">--}}
+{{--                                                           <i class="la la-trash"></i> Delete--}}
+{{--                                                       </a>--}}
+{{--                                                   </div>--}}
+                                               </div>
+                                           @endforeach
+                                       </div>
+{{--                                       <div class="form-group mt-3">--}}
+{{--                                           <a href="javascript:;" data-repeater-create class="btn btn-sm btn-light-primary">--}}
+{{--                                               <i class="la la-plus"></i> Add FWA Item--}}
+{{--                                           </a>--}}
+{{--                                       </div>--}}
+                                   </div>
+
                                </div>
 
                                 {{-- Submit --}}
                                 <div class="fv-row mb-7">
-                                    <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+                                    <button type="submit" class=" mt-5 btn btn-lg btn-primary">Submit</button>
                                 </div>
 
                             </form>
@@ -1214,7 +1293,7 @@
                 e.preventDefault();
                 $('[data-repeater-list="cube_char_2"]').repeater('create');  // Create a new repeater item when clicked
             });
-            $(document).ready(function () {
+
                 $('#cubeChar1Repeater').repeater({
                     initEmpty: false,
                     defaultValues: {
@@ -1243,9 +1322,44 @@
                         }
                     }
                 });
+                    $('#css_design_list_repeater').repeater({
+                        initEmpty: false,
+                        defaultValues: {
+                            'line1': '',
+                            'line2': ''
+                        },
+                        show: function () {
+                            $(this).slideDown();
+                        },
+                        hide: function (deleteElement) {
+                            if (confirm('Are you sure you want to delete this entry?')) {
+                                $(this).slideUp(deleteElement);
+                            }
+                        }
+                    });
 
 
+                    $('#css_design_repeater').repeater({
+                        initEmpty: false,
+                        defaultValues: { 'line1': '', 'line2': '' },
+                        show: function () {
+                            $(this).slideDown();
+                        },
+                        hide: function (deleteElement) {
+                            $(this).slideUp(deleteElement);
+                        }
+                    });
 
+                    $('#fwa_list_repeater').repeater({
+                        initEmpty: false,
+                        defaultValues: { 'line1': '', 'line2': '' },
+                        show: function () {
+                            $(this).slideDown();
+                        },
+                        hide: function (deleteElement) {
+                            $(this).slideUp(deleteElement);
+                        }
+                    });
         });
     </script>
 @endsection
