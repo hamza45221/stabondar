@@ -119,10 +119,12 @@
                             <div class="hero_video-sound">
                                 <div class="video-sound _18">{{ $main->hero_video_unmute }}</div>
                             </div> <!-- <Image src={myImage} alt="Hero Video" /> --> </div> <!-- <SvgBehind /> --></div>
+
+                    </div>
                     <div class="falling-text">
                         <div class="text_shape"></div>
                         <div class="text_shape"></div>
-                        {!! $main->descrition !!}
+                        {!! $main->description !!}
                     </div>
                 </div>
             </div>
@@ -1728,6 +1730,143 @@
         </div>
     </section>
 
-
+        <footer>
+            <div class="footer_body">
+                <div class="footer_center">
+                    <div class="footer_center-grid">
+                        <div class="footer_center-item">
+                            <div class="footer_center-title _24"><span>Drop me</span> <span>a line:</span></div>
+                            <div class="footer_center-list"><a class="footer_link" href="https://t.me/stabondar"
+                                                               target="_blank">
+                                    <div class="footer_arrow">
+                                        <svg fill="none" height="100%" viewBox="0 0 11 11" width="100%"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.08023 1.98054L1.18205 0.521072L10.2783 0.487132L10.2613 9.60032L8.80184 9.70215L8.81881 2.96483L1.48752 10.2961L0.452319 9.26091L7.76663 1.9466L1.08023 1.98054Z"
+                                                  fill="currentColor"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="footer_text _24" link-text-parent><span link-text-target>Telegram</span></div>
+                                </a> <a class="footer_link" href="https://wa.me/380731910491" target="_blank">
+                                    <div class="footer_arrow">
+                                        <svg fill="none" height="100%" viewBox="0 0 11 11" width="100%"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.08023 1.98054L1.18205 0.521072L10.2783 0.487132L10.2613 9.60032L8.80184 9.70215L8.81881 2.96483L1.48752 10.2961L0.452319 9.26091L7.76663 1.9466L1.08023 1.98054Z"
+                                                  fill="currentColor"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="footer_text _24" link-text-parent><span link-text-target>WhatsApp</span></div>
+                                </a></div>
+                        </div>
+                        <div class="footer_center-item" copy-mail>
+                            <div class="footer_center-title _24"><span>copy:</span></div>
+                            <div class="footer_center-list">
+                                <div class="footer_copy _24" link-text-parent><span
+                                        link-text-target>hey@stabondar.com</span></div>
+                            </div>
+                        </div>
+                        <div class="footer_center-item">
+                            <div class="footer_center-title _24"><span>Social</span> <span>Media:</span></div>
+                            <div class="footer_center-list"><a class="footer_link" href="https://www.awwwards.com/stabondar/"
+                                                               target="_blank">
+                                    <div class="footer_arrow">
+                                        <svg fill="none" height="100%" viewBox="0 0 11 11" width="100%"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.08023 1.98054L1.18205 0.521072L10.2783 0.487132L10.2613 9.60032L8.80184 9.70215L8.81881 2.96483L1.48752 10.2961L0.452319 9.26091L7.76663 1.9466L1.08023 1.98054Z"
+                                                  fill="currentColor"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="footer_text _24" link-text-parent><span link-text-target>Awwwards</span></div>
+                                </a> <a class="footer_link" href="https://www.linkedin.com/in/stabondar/" target="_blank">
+                                    <div class="footer_arrow">
+                                        <svg fill="none" height="100%" viewBox="0 0 11 11" width="100%"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.08023 1.98054L1.18205 0.521072L10.2783 0.487132L10.2613 9.60032L8.80184 9.70215L8.81881 2.96483L1.48752 10.2961L0.452319 9.26091L7.76663 1.9466L1.08023 1.98054Z"
+                                                  fill="currentColor"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="footer_text _24" link-text-parent><span link-text-target>LinkedIn</span></div>
+                                </a> <a class="footer_link" href="https://x.com/stabondar" target="_blank">
+                                    <div class="footer_arrow">
+                                        <svg fill="none" height="100%" viewBox="0 0 11 11" width="100%"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.08023 1.98054L1.18205 0.521072L10.2783 0.487132L10.2613 9.60032L8.80184 9.70215L8.81881 2.96483L1.48752 10.2961L0.452319 9.26091L7.76663 1.9466L1.08023 1.98054Z"
+                                                  fill="currentColor"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="footer_text _24" link-text-parent><span link-text-target>X | Twitter</span>
+                                    </div>
+                                </a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_bot">
+                    <div class="footer_bot-left">
+                        <div class="_24">Stas Bondar</div>
+                        <div class="_24">© 2025</div>
+                    </div>
+                    <a class="footer_link" href="/privacy-policy">
+                        <div class="footer_arrow">
+                            <svg fill="none" height="100%" viewBox="0 0 11 11" width="100%"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.08023 1.98054L1.18205 0.521072L10.2783 0.487132L10.2613 9.60032L8.80184 9.70215L8.81881 2.96483L1.48752 10.2961L0.452319 9.26091L7.76663 1.9466L1.08023 1.98054Z"
+                                      fill="currentColor"></path>
+                            </svg>
+                        </div>
+                        <div class="footer_text _24" link-text-parent><span link-text-target>Privacy Policy</span></div>
+                    </a></div>
+            </div>
+        </footer>
+        <div class="awards" data-lenis-prevent>
+            <div class="awards_wrapper">
+                <div class="awards_container">
+                    <div class="awards_list _20">
+                        <div class="awards_list-title">awwwards</div>
+                        <div class="awards_inner-list">
+                            <div class="awards_item _18"><span>stabondar 3.0 | feb ‘25</span> <span>sotd</span></div>
+                            <div class="awards_item _18"><span>significo | may ‘24</span> <span>dev award</span></div>
+                            <div class="awards_item _18"><span>significo | may ‘24</span> <span>sotd</span></div>
+                            <div class="awards_item _18"><span>depo studio | oct ‘23</span> <span>dev award</span></div>
+                            <div class="awards_item _18"><span>depo studio | oct ‘23</span> <span>sotd</span></div>
+                            <div class="awards_item _18"><span>a. mcguire portfolio | feb ‘23</span> <span>dev award</span>
+                            </div>
+                            <div class="awards_item _18"><span>a. mcguire portfolio | feb ‘23</span> <span>sotd</span></div>
+                            <div class="awards_item _18"><span>orb space | sep ‘22</span> <span>dev award</span></div>
+                            <div class="awards_item _18"><span>orb space | sep ‘22</span> <span>sotd</span></div>
+                            <div class="awards_item _18"><span>stabondar 1.0 | apr ‘22</span> <span>dev award</span></div>
+                            <div class="awards_item _18"><span>stabondar 1.0 | apr ‘22</span> <span>sotd</span></div>
+                            <div class="awards_item _18"><span>dima kutsenko | oct ‘21</span> <span>dev award</span></div>
+                            <div class="awards_item _18"><span>dima kutsenko | oct ‘21</span> <span>sotd</span></div>
+                        </div>
+                    </div>
+                    <div class="awards_list _20">
+                        <div class="awards_list-title">css design awards</div>
+                        <div class="awards_inner-list">
+                            <div class="awards_item _18"><span>function health | sep ‘24</span> <span>wotd</span></div>
+                            <div class="awards_item _18"><span>depo studio | oct ‘23</span> <span>wotd</span></div>
+                            <div class="awards_item _18"><span>stabondar 2.0 | jun ‘23</span> <span>wotd</span></div>
+                            <div class="awards_item _18"><span>a. mcguire portfolio | feb ‘23</span> <span>wotd</span></div>
+                            <div class="awards_item _18"><span>orb space | sep ‘22</span> <span>wotd</span></div>
+                            <div class="awards_item _18"><span>stabondar 1.0 | apr ‘22</span> <span>wotd</span></div>
+                            <div class="awards_item _18"><span>dima kutsenko | oct ‘21</span> <span>wotd</span></div>
+                        </div>
+                    </div>
+                    <div class="awards_list _20">
+                        <div class="awards_list-title">the fwa</div>
+                        <div class="awards_inner-list">
+                            <div class="awards_item _18"><span>stabondar 3.0 | feb ‘25</span> <span>fotd</span></div>
+                            <div class="awards_item _18"><span>depo studio | oct ‘23</span> <span>fotd</span></div>
+                            <div class="awards_item _18"><span>orb space | sep ‘22</span> <span>fotd</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="awards_cursor">
+                <div class="awards_cursor-text _18 caps">
+                    full list
+                </div>
+            </div>
+            <div class="awards_overlay"></div>
+        </div>
+    </main>
 
 @endsection
