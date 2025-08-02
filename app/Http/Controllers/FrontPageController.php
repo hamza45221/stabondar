@@ -19,7 +19,7 @@ class FrontPageController extends Controller
     public function contact()
     {
         $contact = Contact::first();
-        $main = Mainhero::first();
-        return view('frontpages.contact',compact('contact','main'));
+//        $main = Mainhero::first();
+        return view('frontpages.contact',compact('contact',));
     }
 }

@@ -1677,58 +1677,83 @@
             </div>
         </div>
     </section>
-    <section class="projects">
-        <div class="projects_body">
-            <div class="projects_container">
-                @foreach ($case as $index => $blog)
-                    <div class="projects_list">
-                        <!-- Use the same hero_image for each anchor and image tag -->
-                        <a href="{{ url('cases/' . strtolower(str_replace(' ', '-', $blog->case_nav_name))) }}" class="projects_img {{ strtolower(str_replace(' ', '-', $blog->case_nav_name)) }} is-{{ $index + 1 }}">
-                            <img
-                                draggable="false"
-                                data-src="{{ asset($blog->hero_image) }}"
-                                alt="{{ $blog->depo_studio }}"
-                                width="3001"
-                                height="2000">
-                        </a>
-                        <a href="{{ url('cases/' . strtolower(str_replace(' ', '-', $blog->depo_studio))) }}" class="projects_img {{ strtolower(str_replace(' ', '-', $blog->depo_studio)) }} is-{{ $index + 2 }}">
-                            <img
-                                draggable="false"
-                                data-src="{{ asset($blog->hero_image) }}"
-                                alt="{{ $blog->depo_studio }}"
-                                width="2000"
-                                height="2000">
-                        </a>
-                        <a href="{{ url('cases/' . strtolower(str_replace(' ', '-', $blog->studio_heading_1))) }}" class="projects_img {{ strtolower(str_replace(' ', '-', $blog->studio_heading_1)) }} is-{{ $index + 3 }}">
-                            <img
-                                draggable="false"
-                                data-src="{{ asset($blog->hero_image) }}"
-                                alt="{{ $blog->studio_heading_1 }}"
-                                width="2000"
-                                height="2000">
-                        </a>
-                        <a href="{{ url('cases/' . strtolower(str_replace(' ', '-', $blog->fwa_heading_1))) }}" class="projects_img {{ strtolower(str_replace(' ', '-', $blog->fwa_heading_1)) }} is-{{ $index + 4 }}">
-                            <img
-                                draggable="false"
-                                data-src="{{ asset($blog->hero_image) }}"
-                                alt="{{ $blog->fwa_heading_1 }}"
-                                width="2000"
-                                height="2000">
-                        </a>
-                        <a href="{{ url('cases/' . strtolower(str_replace(' ', '-', $blog->studio_heading_2))) }}" class="projects_img {{ strtolower(str_replace(' ', '-', $blog->studio_heading_2)) }} is-{{ $index + 5 }}">
-                            <img
-                                draggable="false"
-                                data-src="{{ asset($blog->hero_image) }}"
-                                alt="{{ $blog->studio_heading_2 }}"
-                                width="2000"
-                                height="2000">
-                        </a>
-                    </div>
-                @endforeach
-            </div>
+{{--    <section class="projects">--}}
+{{--        <div class="projects_body">--}}
+{{--            <div class="projects_container">--}}
+{{--                @foreach ($case as $index => $blog)--}}
+{{--                    <div class="projects_list">--}}
+{{--                        <!-- Only one hero_image used per blog, class structure untouched -->--}}
+{{--                        <a href="{{ url('cases/' . $blog->slug) }}" class="projects_img {{ strtolower(str_replace(' ', '-', $blog->case_nav_name)) }} is-{{ $index + 1 }}">--}}
+{{--                            <img--}}
+{{--                                draggable="false"--}}
+{{--                                data-src="{{ asset($blog->hero_image) }}"--}}
+{{--                                alt="{{ $blog->depo_studio }}"--}}
+{{--                                width="3001"--}}
+{{--                                height="2000">--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                @endforeach--}}
 
-        </div>
-    </section>
+{{--            </div>--}}
+
+{{--        </div>--}}
+{{--    </section>--}}
+
+        @php
+            $stylesRow1 = [
+                ['slug' => 'runway',        'scrollY' => '-54.498054', 'x' => '238.2',   'y' => '-99.9',   'img' => '/images/runway/main.webp', 'width' => 3001],
+                ['slug' => 'depo-studio',   'scrollY' => '-57.366373', 'x' => '226.29',  'y' => '-94.905', 'img' => '/images/depo/main.webp',   'width' => 2000],
+                ['slug' => 'dima-kutsenko', 'scrollY' => '-51.629735', 'x' => '238.2',   'y' => '-99.9',   'img' => '/images/dima/main.webp',   'width' => 2000],
+                ['slug' => 'orb-space',     'scrollY' => '-51.629735', 'x' => '250.11',  'y' => '-104.895','img' => '/images/orb/main.webp',    'width' => 2000],
+                ['slug' => 'terrane-group', 'scrollY' => '-60.234691', 'x' => '238.2',   'y' => '-99.9',   'img' => '/images/terrane/main.webp','width' => 2000],
+            ];
+
+            $stylesRow2 = [
+                ['slug' => 'runway',        'scrollY' => '-63.10301',  'x' => '238.2',   'y' => '-99.9',   'img' => '/images/runway/main.webp', 'width' => 3001],
+                ['slug' => 'depo-studio',   'scrollY' => '-63.10301',  'x' => '214.38',  'y' => '-89.91',  'img' => '/images/depo/main.webp',   'width' => 2000],
+                ['slug' => 'dima-kutsenko', 'scrollY' => '-51.629735', 'x' => '238.2',   'y' => '-99.9',   'img' => '/images/dima/main.webp',   'width' => 2000],
+                ['slug' => 'orb-space',     'scrollY' => '-51.629735', 'x' => '226.29',  'y' => '-94.905', 'img' => '/images/orb/main.webp',    'width' => 2000],
+                ['slug' => 'terrane-group', 'scrollY' => '-60.234691', 'x' => '262.02',  'y' => '-109.89', 'img' => '/images/terrane/main.webp','width' => 2000],
+            ];
+        @endphp
+
+        <section class="projects">
+            <div class="projects_body">
+                <div class="projects_container">
+
+                    {{-- First row --}}
+                    <div class="projects_list">
+                        @foreach($stylesRow1 as $index => $item)
+                            <a href="/cases/{{ $item['slug'] }}" class="projects_img {{ \Str::slug($item['slug']) }} is-{{ $index + 1 }}"
+                               style="--scrollY: {{ $item['scrollY'] }}; --x: {{ $item['x'] }}; --y: {{ $item['y'] }}; --opacity: 0.998814; --position: 0.998814;">
+                                <img draggable="false"
+                                     data-src="{{ asset($item['img']) }}"
+                                     alt="{{ $item['slug'] }}"
+                                     width="{{ $item['width'] }}"
+                                     height="2000"
+                                     src="{{ asset($item['img']) }}">
+                            </a>
+                        @endforeach
+                    </div>
+
+                    {{-- Second row --}}
+                    <div class="projects_list">
+                        @foreach($stylesRow2 as $index => $item)
+                            <a href="/cases/{{ $item['slug'] }}" class="projects_img {{ \Str::slug($item['slug']) }} is-{{ $index + 1 }}"
+                               style="--scrollY: {{ $item['scrollY'] }}; --x: {{ $item['x'] }}; --y: {{ $item['y'] }}; --opacity: 0.998814; --position: 0.998814;">
+                                <img draggable="false"
+                                     data-src="{{ asset($item['img']) }}"
+                                     alt="{{ $item['slug'] }}"
+                                     width="{{ $item['width'] }}"
+                                     height="2000"
+                                     src="{{ asset($item['img']) }}">
+                            </a>
+                        @endforeach
+                    </div>
+
+                </div>
+            </div>
+        </section>
 
         <footer>
             <div class="footer_body">

@@ -262,11 +262,8 @@ class CaseController extends Controller
 
     public function show($slug)
     {
-        $currentProject = Cases::where('slug', $slug)->first();
-
-        if (!$currentProject) {
-            abort(404);
-        }
+//        dd("ASD");
+        $currentProject = Cases::where('slug', $slug)->firstOrFail();
 
         $nextProject = Cases::where('id', '>', $currentProject->id)
             ->orderBy('id', 'asc')
@@ -274,4 +271,6 @@ class CaseController extends Controller
 
         return view('frontpages.case', compact('currentProject', 'nextProject'));
     }
+
+
 }

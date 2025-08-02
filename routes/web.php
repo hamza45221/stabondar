@@ -13,14 +13,14 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\FrontPageController::class, 'index'])->name('index');
 Route::get('/contact', [App\Http\Controllers\FrontPageController::class, 'contact'])->name('contact');
 Route::get('/send-message', [\App\Http\Controllers\Admin\ContactController::class, 'contactMessage'])->name('contact.message');
-Route::get('cases/{slug}', [\App\Http\Controllers\Admin\CaseController::class, 'show'])->name('projects.show');
+Route::get('case/{slug}', [\App\Http\Controllers\Admin\CaseController::class, 'show'])->name('projects.show');
 
 
 Route::group(['prefix'=>'admin'], function () {
     Route::get('/dashboard', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.dashboard');
 
 
-    Route::group(['prefix' => 'heromain','middleware'=>'auth'], function () {
+    Route::group(['prefix' => 'heromain'], function () {
         Route::get('/', [App\Http\Controllers\Admin\HeroMainController::class, 'index'])->name('admin.heromain');
         Route::post('/store', [App\Http\Controllers\Admin\HeroMainController::class, 'store'])->name('admin.heromain.store');
     });

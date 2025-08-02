@@ -32,7 +32,7 @@ class Cases extends Model
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
-            ->generateSlugsFrom('hero_sub_heading') // <-- or any other field
+            ->generateSlugsFrom('case_nav_name') // <-- or any other field
             ->saveSlugsTo('slug');
     }
     public function getMainImage1Attribute()
