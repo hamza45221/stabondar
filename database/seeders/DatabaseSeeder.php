@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call(UserTableSeed::class);
         $this->call(CaseTableSeed::class);
         $this->call(ContactTableSeed::class);
+        $this->call(PopupTableSeed::class);
 //        User::factory()->create([
 //            'name' => 'Test User',
 //            'email' => 'test@example.com',

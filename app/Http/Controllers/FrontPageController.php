@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cases;
 use App\Models\Contact;
 use App\Models\Mainhero;
+use App\Models\Popup;
 use Illuminate\Http\Request;
 
 class FrontPageController extends Controller
@@ -13,7 +14,8 @@ class FrontPageController extends Controller
     {
         $main = Mainhero::first();
         $case = Cases::all();
-        return view('frontpages.index',compact('main','case'));
+        $popup = Popup::first();
+        return view('frontpages.index',compact('main','case','popup'));
     }
 
     public function contact()
