@@ -23,6 +23,10 @@
     <meta content="nointentdetection" name="chrome">
     <title>Stas Bondar — Creative Developer</title>
     <link href="/_astro/Layout.0NeSWDeX.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
     <style>html.lenis, html.lenis body {
             height: auto
         }
@@ -45,8 +49,49 @@
             transition-behavior: allow-discrete
         }
     </style>
+
+
+
+    <link rel="stylesheet" href="{{ asset('loader-assets/loader.css') }}" />
+    <script src="{{ asset('loader-assets/loader.js') }}"></script>
+    <!-- Splitting + GSAP -->
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body data-transition="wrapper" style="background-color: #111;">
+
+
+<div id="preloader" class="preloader">
+    <div class="container">
+        <h1 class="entry-title" data-splitting="lines">
+            <!-- Line 1 -->
+            <div class="splitted-title__line" style="gap: 5vw !important;">
+                <span class="counter-inline" id="counterText">0 - 100</span>
+                <span class="word">Your</span>
+            </div>
+            <!-- Line 2 -->
+            <div class="splitted-title__line">
+                <span class="word">web</span>
+                <span class="word">experience</span>
+            </div>
+            <!-- Line 3 -->
+            <div class="splitted-title__line">
+                <span class="word">is</span>
+                <span class="word">loading</span>
+                <span class="word">right</span>
+                <span class="word" id="nowWord">now</span>
+            </div>
+        </h1>
+        <div class="intro-section__description">
+            <p>Please wait<br>a few seconds.</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
 <div>
     <div class="loader">
         <div class="container">

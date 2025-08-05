@@ -151,7 +151,7 @@
         }
 
         .second-page-title {
-            font-size: 58px;
+            font-size: 58px !important;
             font-weight: 500;
             margin-top: 20px;
             color: black;
@@ -257,6 +257,13 @@
             width: 20px;
         }
 
+        .model-scroll h2 {
+            font-size:28px !important;
+            display: flex !important;
+            margin-top:14px !important;
+            margin-bottom:14px !important;
+        }
+
     </style>
 
 
@@ -281,7 +288,7 @@
                 </div>
             </div>
             <div class="disclosure-box">
-                <h6 class="fw-bold mb-2">{{ $popup->footer_title }}</h6>
+                <h6 class="fw-bold mb-2" style="font-size: 24px !important;">{{ $popup->footer_title }}</h6><br></b>
                 <p>{!! $popup->footer_desc  !!}</p>
             </div>
         </div>
@@ -296,7 +303,7 @@
                 </div>
             </div>
 
-            <h1 class="second-page-title">{{ $popup->page2_heading }}</h1>
+            <h1 class="second-page-title">{{ $popup->page2_heading }}</h1><br>
             <p class="second-page-subtitle pb-4">{{ $popup->page2_sub_heading }} </p>
 
             <div class="model-scroll py-0" style="height: 230px !important;">
@@ -320,6 +327,83 @@
             </div>
         </div>
     </div>
+
+
+
+    <script>
+        window.onload = function () {
+            if (!localStorage.getItem('disclosureAccepted')) {
+                document.getElementById('disclosureModal').style.display = 'flex';
+            }
+        };
+
+        // Handle Accept
+        if (document.getElementById('acceptBtn')) {
+            document.getElementById('acceptBtn').addEventListener('click', function () {
+                localStorage.setItem('disclosureAccepted', 'true');
+                document.getElementById('disclosureModal').style.display = 'none';
+            });
+        }
+
+        // Decline button - show next page
+        if (document.getElementById('declineBtn')) {
+            document.getElementById('declineBtn').addEventListener('click', function () {
+                document.getElementById('page1').style.display = 'none';
+                document.getElementById('page2').style.display = 'block';
+            });
+        }
+
+        function showPage(pageId) {
+            document.querySelectorAll('.page-content').forEach(div => {
+                div.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            alert('Cookies Accepted!');
+        }
+
+        function goBackToPage1() {
+            document.getElementById('page2').style.display = 'none';
+            document.getElementById('page1').style.display = 'block';
+        }
+
+
+        // ======= aI agree cookies ============
+
+
+        if (localStorage.getItem('custom_cookie_consent') === 'true') {
+            document.getElementById('customAcceptBanner').style.display = 'none';
+        }
+        document.getElementById('customCookiesAgree').addEventListener('click', function () {
+            localStorage.setItem('custom_cookie_consent', 'true');
+            document.getElementById('customAcceptBanner').style.display = 'none';
+        });
+
+
+        // ============= swiper ===========
+
+
+        const swiper = new Swiper(".marqueeSwiper", {
+            slidesPerView: "auto",
+            spaceBetween: 30,
+            loop: true,
+            freeMode: true,
+            freeModeMomentum: false,
+            allowTouchMove: false,
+            speed: 4000, // increase for smoother slow scroll
+            autoplay: {
+                disableOnInteraction: false,
+            },
+        });
+        setTimeout(function () {
+            document.getElementById('preloader').remove();
+        }, 5000)
+
+    </script>
+
 
 
 
