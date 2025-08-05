@@ -2022,56 +2022,44 @@
 {{--    </section>--}}
 
         @php
-            $stylesRow1 = [
-                ['slug' => 'runway',        'scrollY' => '-54.498054', 'x' => '238.2',   'y' => '-99.9',   'img' => '/images/runway/main.webp', 'width' => 3001],
-                ['slug' => 'depo-studio',   'scrollY' => '-57.366373', 'x' => '226.29',  'y' => '-94.905', 'img' => '/images/depo/main.webp',   'width' => 2000],
-                ['slug' => 'dima-kutsenko', 'scrollY' => '-51.629735', 'x' => '238.2',   'y' => '-99.9',   'img' => '/images/dima/main.webp',   'width' => 2000],
-                ['slug' => 'orb-space',     'scrollY' => '-51.629735', 'x' => '250.11',  'y' => '-104.895','img' => '/images/orb/main.webp',    'width' => 2000],
-                ['slug' => 'terrane-group', 'scrollY' => '-60.234691', 'x' => '238.2',   'y' => '-99.9',   'img' => '/images/terrane/main.webp','width' => 2000],
-            ];
-
-            $stylesRow2 = [
-                ['slug' => 'runway',        'scrollY' => '-63.10301',  'x' => '238.2',   'y' => '-99.9',   'img' => '/images/runway/main.webp', 'width' => 3001],
-                ['slug' => 'depo-studio',   'scrollY' => '-63.10301',  'x' => '214.38',  'y' => '-89.91',  'img' => '/images/depo/main.webp',   'width' => 2000],
-                ['slug' => 'dima-kutsenko', 'scrollY' => '-51.629735', 'x' => '238.2',   'y' => '-99.9',   'img' => '/images/dima/main.webp',   'width' => 2000],
-                ['slug' => 'orb-space',     'scrollY' => '-51.629735', 'x' => '226.29',  'y' => '-94.905', 'img' => '/images/orb/main.webp',    'width' => 2000],
-                ['slug' => 'terrane-group', 'scrollY' => '-60.234691', 'x' => '262.02',  'y' => '-109.89', 'img' => '/images/terrane/main.webp','width' => 2000],
-            ];
+            $baseClasses = ['runway', 'depo', 'dima', 'orb-space', 'terrane'];
+            $caseChunks = $case->chunk(ceil($case->count() / 2)); // split into 2 chunks
         @endphp
 
         <section class="projects">
             <div class="projects_body">
                 <div class="projects_container">
 
-                    {{-- First row --}}
-                    <div class="projects_list">
-                        @foreach($stylesRow1 as $index => $item)
-                            <a href="/cases/{{ $item['slug'] }}" class="projects_img {{ \Str::slug($item['slug']) }} is-{{ $index + 1 }}"
-                               style="--scrollY: {{ $item['scrollY'] }}; --x: {{ $item['x'] }}; --y: {{ $item['y'] }}; --opacity: 0.998814; --position: 0.998814;">
-                                <img draggable="false"
-                                     data-src="{{ asset($item['img']) }}"
-                                     alt="{{ $item['slug'] }}"
-                                     width="{{ $item['width'] }}"
-                                     height="2000"
-                                     src="{{ asset($item['img']) }}">
-                            </a>
-                        @endforeach
-                    </div>
+                    {{-- Loop over each chunk (2 lists) --}}
+                    @foreach($caseChunks as $chunkIndex => $chunk)
+                        @php
+                            $classPool = $baseClasses;
+                            $totalClasses = count($baseClasses);
+                            $counter = 0;
+                        @endphp
 
-                    {{-- Second row --}}
-                    <div class="projects_list">
-                        @foreach($stylesRow2 as $index => $item)
-                            <a href="/cases/{{ $item['slug'] }}" class="projects_img {{ \Str::slug($item['slug']) }} is-{{ $index + 1 }}"
-                               style="--scrollY: {{ $item['scrollY'] }}; --x: {{ $item['x'] }}; --y: {{ $item['y'] }}; --opacity: 0.998814; --position: 0.998814;">
-                                <img draggable="false"
-                                     data-src="{{ asset($item['img']) }}"
-                                     alt="{{ $item['slug'] }}"
-                                     width="{{ $item['width'] }}"
-                                     height="2000"
-                                     src="{{ asset($item['img']) }}">
-                            </a>
-                        @endforeach
-                    </div>
+                        <div class="projects_list">
+                            @foreach($chunk as $index => $project)
+                                @php
+                                    if ($counter >= $totalClasses && $counter % $totalClasses === 0) {
+                                        shuffle($classPool);
+                                    }
+                                    $className = $classPool[$counter % $totalClasses];
+                                    $counter++;
+                                @endphp
+
+                                <a href="{{ url('case/' . $project->slug) }}"
+                                   class="projects_img {{ $className }} is-{{ $index + 1 }}">
+                                    <img draggable="false"
+                                         data-src="{{ asset($project->hero_image) }}"
+                                         alt="{{ $className }}"
+                                         width="2000"
+                                         height="2000"
+                                         src="{{ asset($project->hero_image) }}">
+                                </a>
+                            @endforeach
+                        </div>
+                    @endforeach
 
                 </div>
             </div>
